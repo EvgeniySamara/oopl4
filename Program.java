@@ -65,7 +65,9 @@ public class Program {
         int res = box2.moveTo(box3);
         if (res == 1) System.out.println("Успешно переложили"); 
         else  System.out.println("Несовместимые коробки"); 
-        
+        box2.listBox();
+        System.out.println("********");
+        box3.listBox();
         
     }
 

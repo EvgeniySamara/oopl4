@@ -4,14 +4,17 @@ import java.util.ArrayList;
 
 public class Box<T extends Fruit> {
     
-    
+  
+    private ArrayList<T> fruits;
+    static int totalbox = 0;
+    private int boxnum;
+  
     public Box()
     {
         this.fruits = new ArrayList<T>();
-        boxnum++;
+        totalbox++;
+        this.boxnum = totalbox;
     }
-    private ArrayList<T> fruits;
-    private int boxnum;
 
     public int getBoxnum() {
         return boxnum;
