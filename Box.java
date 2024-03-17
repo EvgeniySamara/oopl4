@@ -3,7 +3,10 @@ package ru.geekbrains.oop.lesson4.homework;
 import java.util.ArrayList;
 
 public class Box<T extends Fruit> {
-
+    public Box()
+    {
+        this.fruits = new ArrayList<T>();
+    }
     private ArrayList<T> fruits;
 
     // d. Сделать метод getWeight(), который высчитывает вес коробки, зная вес одного фрукта и их количество:
@@ -28,6 +31,9 @@ public class Box<T extends Fruit> {
 
     public void add (T fruit)
     {
-        fruits.add(fruit);
+        this.fruits.add(fruit);
+        // for (T t : fruits) {
+        //     System.out.println(t);
+        // }
     }
 }

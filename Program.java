@@ -32,7 +32,7 @@ public class Program {
         for (Apple apple : apples) {
             System.out.println(apple);
         }
-        ;
+        
 
     }
 
