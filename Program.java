@@ -42,17 +42,6 @@ public class Program {
         box2.add(or2);    
         box3.add(or3);                 
 
-   
-        String s = box1.getFruitsType();
-      
-        String substring = s.substring(s.lastIndexOf(".") + 1);
-        System.out.println("В коробке: "+substring);
-
-        ArrayList<Apple> apples = box1.getList();
-        for (Apple apple : apples) {
-            System.out.println(apple);
-        }
-
 
 
         System.out.println("Сравнение коробок");
@@ -61,7 +50,23 @@ public class Program {
         System.out.println( String.format("Коробка №3 Вес: %f", box3.getWeight()));
 
         System.out.println("Результат сравнения 1 и 2 : "+  String.valueOf(box1.compare(box2)));
-        System.out.println("Результат сравнения 1 и 3 : "+  String.valueOf(box1.compare(box3)));        
+        System.out.println("Результат сравнения 1 и 3 : "+  String.valueOf(box1.compare(box3)));    
+
+    
+        String s = box2.getFruitsType();
+      
+        String substring = s.substring(s.lastIndexOf(".") + 1);
+        System.out.println("В коробке: "+substring);
+
+        box2.listBox();
+        System.out.println("********");
+        box3.listBox();
+        System.out.println("********");
+        int res = box2.moveTo(box3);
+        if (res == 1) System.out.println("Успешно переложили"); 
+        else  System.out.println("Несовместимые коробки"); 
+        
+        
     }
 
 }

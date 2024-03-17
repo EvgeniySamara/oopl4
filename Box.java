@@ -3,11 +3,19 @@ package ru.geekbrains.oop.lesson4.homework;
 import java.util.ArrayList;
 
 public class Box<T extends Fruit> {
+    
+    
     public Box()
     {
         this.fruits = new ArrayList<T>();
+        boxnum++;
     }
     private ArrayList<T> fruits;
+    private int boxnum;
+
+    public int getBoxnum() {
+        return boxnum;
+    }
 
     public String getFruitsType() {
         //System.out.println(fruits.get(0).getClass());
@@ -25,6 +33,19 @@ public class Box<T extends Fruit> {
         else return false;
     }
 
+    public int moveTo (Box box)
+        {
+            if (this.getFruitsType().equals(box.getFruitsType()))
+            {
+            for (T t : fruits) {
+                box.add(t);
+            }
+            fruits.clear();
+            return 1;
+            }
+            else return -1;
+
+        }
 
     public float getWeight()
     {
@@ -43,11 +64,18 @@ public class Box<T extends Fruit> {
         return this.fruits;
     }
 
+    public void listBox()
+    {
+       System.out.println( String.format("Коробка №%d", this.boxnum));
+        for (T t : fruits) {
+
+            System.out.println(t);
+        }
+    }
+
     public void add (T fruit)
     {
         this.fruits.add(fruit);
-        // for (T t : fruits) {
-        //     System.out.println(t);
-        // }
+
     }
 }
