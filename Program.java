@@ -24,7 +24,15 @@ public class Program {
      */
 
     public static void main(String[] args) {
-
+        Apple apl1 = new Apple();
+        // System.out.println(apl1);
+        Box box1 = new Box<Apple>();
+        box1.add(apl1);
+        ArrayList<Apple> apples = box1.getList();
+        for (Apple apple : apples) {
+            System.out.println(apple);
+        }
+        ;
 
     }
 
