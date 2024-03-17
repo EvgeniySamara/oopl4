@@ -25,14 +25,17 @@ public class Program {
 
     public static void main(String[] args) {
         Apple apl1 = new Apple();
-        // System.out.println(apl1);
-        Box box1 = new Box<Apple>();
+        Apple apl2 = new Apple();   
+        Orange or1 = new Orange();
+        System.out.println(or1);
+        Box box1 = new Box<>();
         box1.add(apl1);
+        box1.add(apl2);
         ArrayList<Apple> apples = box1.getList();
         for (Apple apple : apples) {
             System.out.println(apple);
         }
-        
+        System.out.println(box1.getWeight());
 
     }
 

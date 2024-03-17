@@ -14,7 +14,7 @@ public class Box<T extends Fruit> {
     // e. Внутри класса Box сделать метод compare(), который позволяет сравнить текущую коробку с той, которую
     // подадут в compare() в качестве параметра. true – если их массы равны, false в противоположном случае.
     // Можно сравнивать коробки с яблоками и апельсинами;
-    public float getWeight(Box box)
+    public float getWeight()
     {
         float sumWeigth = 0; 
         for (T fruit : fruits) {
