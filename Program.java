@@ -26,21 +26,42 @@ public class Program {
     public static void main(String[] args) {
         Apple apl1 = new Apple();
         Apple apl2 = new Apple();   
-        Orange or1 = new Orange();
-        System.out.println(or1);
-        Box box1 = new Box<>();
+        Apple apl3 = new Apple();         
+  
+        Box<Apple> box1 = new Box<>();
         box1.add(apl1);
         box1.add(apl2);
+        box1.add(apl3);        
+
+        Orange or1 = new Orange();
+        Orange or2 = new Orange();
+        Orange or3 = new Orange();       
+        Box <Orange> box2 = new Box<>();  
+        Box <Orange> box3= new Box<>();          
+        box2.add(or1); 
+        box2.add(or2);    
+        box3.add(or3);                 
+
+   
+        String s = box1.getFruitsType();
+      
+        String substring = s.substring(s.lastIndexOf(".") + 1);
+        System.out.println("В коробке: "+substring);
+
         ArrayList<Apple> apples = box1.getList();
         for (Apple apple : apples) {
             System.out.println(apple);
         }
-        System.out.println(box1.getWeight());
-        //System.out.println(box1.getClass());
-        String s = box1.getFruitsType();
-        // String s = "class ru.geekbrains.oop.lesson4.homework.Apple"
-        String substring = s.substring(s.lastIndexOf(".") + 1);
-        System.out.println(substring);
+
+
+
+        System.out.println("Сравнение коробок");
+        System.out.println( String.format("Коробка №1 Вес: %f", box1.getWeight()));
+        System.out.println( String.format("Коробка №2 Вес: %f", box2.getWeight()));
+        System.out.println( String.format("Коробка №3 Вес: %f", box3.getWeight()));
+
+        System.out.println("Результат сравнения 1 и 2 : "+  String.valueOf(box1.compare(box2)));
+        System.out.println("Результат сравнения 1 и 3 : "+  String.valueOf(box1.compare(box3)));        
     }
 
 }

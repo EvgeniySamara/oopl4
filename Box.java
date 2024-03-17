@@ -14,11 +14,18 @@ public class Box<T extends Fruit> {
         return String.valueOf(fruits.get(0).getClass());
     }
 
-    // d. Сделать метод getWeight(), который высчитывает вес коробки, зная вес одного фрукта и их количество:
-    // вес яблока – 1.0f, апельсина – 1.5f (единицы измерения не важны);
+
     // e. Внутри класса Box сделать метод compare(), который позволяет сравнить текущую коробку с той, которую
     // подадут в compare() в качестве параметра. true – если их массы равны, false в противоположном случае.
     // Можно сравнивать коробки с яблоками и апельсинами;
+
+    public Boolean compare(Box box)
+    {
+        if (this.getWeight() == box.getWeight()) return true;
+        else return false;
+    }
+
+
     public float getWeight()
     {
      //    float sumWeigth = 0; 
