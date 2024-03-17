@@ -9,6 +9,11 @@ public class Box<T extends Fruit> {
     }
     private ArrayList<T> fruits;
 
+    public String getFruitsType() {
+        //System.out.println(fruits.get(0).getClass());
+        return String.valueOf(fruits.get(0).getClass());
+    }
+
     // d. Сделать метод getWeight(), который высчитывает вес коробки, зная вес одного фрукта и их количество:
     // вес яблока – 1.0f, апельсина – 1.5f (единицы измерения не важны);
     // e. Внутри класса Box сделать метод compare(), который позволяет сравнить текущую коробку с той, которую
@@ -16,11 +21,13 @@ public class Box<T extends Fruit> {
     // Можно сравнивать коробки с яблоками и апельсинами;
     public float getWeight()
     {
-        float sumWeigth = 0; 
-        for (T fruit : fruits) {
-            sumWeigth = sumWeigth + fruit.getWeight();
+     //    float sumWeigth = 0; 
+    //     for (T fruit : fruits) {
+    //         sumWeigth = sumWeigth + fruit.getWeight();
  
-        }
+    //     }
+         
+        float sumWeigth = fruits.size()*fruits.get(0).getWeight();
         return sumWeigth;
     }
 

@@ -36,7 +36,11 @@ public class Program {
             System.out.println(apple);
         }
         System.out.println(box1.getWeight());
-
+        //System.out.println(box1.getClass());
+        String s = box1.getFruitsType();
+        // String s = "class ru.geekbrains.oop.lesson4.homework.Apple"
+        String substring = s.substring(s.lastIndexOf(".") + 1);
+        System.out.println(substring);
     }
 
 }
